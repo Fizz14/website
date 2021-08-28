@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Snake game</title>
+    <style>
+        .frame {
+            border-radius: 25px;
+            background: black;
+            padding: 20px;
+            margin-left: calc(50% - (150px + 20px));
+            margin-right: auto;
+            display: inline-block;
+        }
+
+        canvas {
+            background: black;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            border-color: grey;
+            border-radius: 1px;
+            border-style: solid;
+        }
+
+    </style>
+
+    <script src="js/snake.js"></script>
+</head>
+
+<body onload="init();">
+    <div class="frame">
+        <canvas id="myCanvas" width="300" height="300">
+        </canvas>
+    </div>
+</body>
+</html>
