@@ -1,24 +1,32 @@
+.lightmode {
+    --bgcolor: rgb(39, 32, 32);
+    --fgcolor: rgb(219, 161, 161);
+}
+
+.darkmode {
+    --bgcolor: #f6e27f;
+    --fgcolor: #680e47;
+    
+}
+
+
+
 body {
     font-family: 'Major Mono Display', monospace;
     font-size: 24px;
-    /* color: rgb(120, 120, 120);*/
-    color: #680e47;
-    background: #f6e27f
+    color: var(--fgcolor);
+    background: var(--bgcolor);
+    transition: background-color 0.6s ease, color 1s ease;
 }
 
 hr {
     /*color: rgb(120, 120, 120);*/
-    color: #680e47;
-    border-color: #680e47;
-    background-color: #680e47;
+    color: var(--fgcolor);
+    border-color: var(--fgcolor);
+    background-color: var(--fgcolor);
     margin-right: 60%;
     position: absolute;
     padding-left: 20em;
-}
-
-.ghost {
-    opacity: 0;
-    padding-top: 0.00em;
 }
 
 
@@ -39,36 +47,37 @@ h5 {
     clear: left;
 }
 
-.arch_date {
+.nav li {
+    display: inline-block;
+    margin-right: -4px;
 }
 
-.cur_date {
+/* menubar elements */
+li input{
+    width : 12em;
+    height : 3em;
+    color: var(--bgcolor);
+    background-color: var(--fgcolor);
+    box-sizing: border-box;
+
+
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .heading {
-    display: inline-block;
     float: left;
-    z-index: 2;
-    
-    margin: 0 auto;
 }
 
 .date_container {
     float: right;
-    display: inline-block;
 }
 
-.top_container {
-}
 
-ul {
-    list-style-type: square;
-}
-
-li {
-    padding: 1em;
-}
-
+/*
 a {
     color: #99c6b9;
         
@@ -77,6 +86,7 @@ a {
 a:visited {
     color: #a8b7ab;
 }
+*/
 
 .js_frame {
     border-radius: 25px;
@@ -108,7 +118,71 @@ canvas {
     z-index: 1;
 }
 
-#680e47
+.switch-wrapper {
+    float: right;
+    margin-top: -1em;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;    
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--bgcolor);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--fgcolor);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--fgcolor);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.switchtext {
+    float: left;
+    
+}
+
+var(--fgcolor)
 #f6e27f
 #e2c391
 #a8b7ab
